@@ -29,17 +29,6 @@ const structuredCopy = {
 } as const;
 
 export async function HomeRoute({ locale }: { locale: AppLocale }) {
-  const paddleEnvironment = process.env.NEXT_PUBLIC_PADDLE_ENV;
-  const paddleToken = process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN;
-
-  if (!paddleEnvironment || !['sandbox', 'production'].includes(paddleEnvironment)) {
-    throw new Error('NEXT_PUBLIC_PADDLE_ENV must be explicitly set to sandbox or production.');
-  }
-  if (!paddleToken) throw new Error('NEXT_PUBLIC_PADDLE_CLIENT_TOKEN is required.');
-  if (paddleEnvironment === 'sandbox' && !paddleToken.startsWith('test_')) {
-    throw new Error('Paddle sandbox requires a client-side token prefixed with test_.');
-  }
-
   const requestHeaders = await headers();
   const country = requestHeaders.get('x-vercel-ip-country') ?? undefined;
   const t = structuredCopy[locale];
