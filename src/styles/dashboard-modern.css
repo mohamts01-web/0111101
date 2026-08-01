@@ -238,7 +238,7 @@
 }
 
 .dashboard-account-menu-signout {
-  color: #c2410c;
+  color: var(--destructive);
 }
 
 .dashboard-main-shell {
@@ -342,8 +342,8 @@
 .dashboard-upgrade-button {
   min-height: 36px;
   gap: 7px;
-  background: linear-gradient(120deg, var(--primary), #147fe0);
-  color: #fff;
+  background: var(--primary);
+  color: var(--primary-foreground);
 }
 
 .dashboard-mobile-brand,
@@ -972,10 +972,10 @@ body .dashboard-overview-grid .resume-stats > div:last-child {
   gap: 28px;
   overflow: hidden;
   padding: 28px 30px;
-  border: 1px solid #cde4f6;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #edf7ff;
-  color: #18324f;
+  background: var(--card);
+  color: var(--card-foreground);
 }
 
 .dashboard-focus-card::before {
@@ -983,14 +983,14 @@ body .dashboard-overview-grid .resume-stats > div:last-child {
   inset-block: 0;
   inset-inline-start: 0;
   width: 5px;
-  background: var(--brand-secondary);
+  background: var(--primary);
   content: '';
 }
 
 .dark .dashboard-focus-card {
-  border-color: #29465f;
-  background: #14283a;
-  color: #e9f5ff;
+  border-color: var(--border);
+  background: var(--card);
+  color: var(--card-foreground);
 }
 
 .dashboard-focus-copy {
@@ -1004,15 +1004,15 @@ body .dashboard-overview-grid .resume-stats > div:last-child {
   margin-bottom: 8px;
   padding: 4px 7px;
   border-radius: 4px;
-  background: #d9efff;
-  color: #0876c7;
+  background: var(--accent);
+  color: var(--accent-foreground);
   font-size: 9px;
   font-weight: 850;
 }
 
 .dark .dashboard-focus-copy > span {
-  background: #153c58;
-  color: #8fd2ff;
+  background: var(--accent);
+  color: var(--accent-foreground);
 }
 
 .dashboard-focus-copy h2 {
@@ -1024,13 +1024,13 @@ body .dashboard-overview-grid .resume-stats > div:last-child {
 .dashboard-focus-copy p {
   max-width: 500px;
   margin: 0 0 18px;
-  color: #607891;
+  color: var(--muted-foreground);
   font-size: 11px;
   line-height: 1.75;
 }
 
 .dark .dashboard-focus-copy p {
-  color: #a9bfd2;
+  color: var(--muted-foreground);
 }
 
 .dashboard-focus-copy button,
@@ -1046,9 +1046,9 @@ body .dashboard-overview-grid .resume-stats > div:last-child {
   height: 178px;
   justify-self: end;
   padding: 30px 18px;
-  border: 1px solid #cfdae6;
+  border: 1px solid var(--border);
   background: #fff;
-  box-shadow: 0 16px 34px rgb(37 78 115 / 13%);
+  box-shadow: var(--shadow-sm);
 }
 
 .dashboard-focus-score {
@@ -1057,8 +1057,8 @@ body .dashboard-overview-grid .resume-stats > div:last-child {
   inset-inline-end: 12px;
   padding: 4px 6px;
   border-radius: 4px;
-  background: #e5f6ef;
-  color: #0c8c68;
+  background: var(--accent);
+  color: var(--accent-foreground);
   font-size: 9px;
   font-weight: 850;
 }
@@ -1073,21 +1073,21 @@ body .dashboard-overview-grid .resume-stats > div:last-child {
   width: 52px;
   height: 6px;
   margin-bottom: 8px;
-  background: #1f3854;
+  background: #222;
 }
 
 .dashboard-focus-document strong {
   width: 42px;
   height: 4px;
   margin: 18px 0 8px;
-  background: #14bfae;
+  background: #888;
 }
 
 .dashboard-focus-document i {
   width: 100%;
   height: 3px;
   margin-bottom: 7px;
-  background: #dce5ef;
+  background: var(--muted);
 }
 
 body .resume-section-heading {
@@ -1144,10 +1144,10 @@ body .resume-draft-preview {
   width: 96px;
   height: 132px;
   padding: 26px 13px 14px;
-  border-color: #d5dfe9;
+  border-color: var(--border);
   border-radius: 2px;
   background: #fff;
-  box-shadow: 0 8px 20px rgb(38 70 101 / 8%);
+  box-shadow: var(--shadow-sm);
 }
 
 body .resume-draft-preview > span {
@@ -1157,8 +1157,8 @@ body .resume-draft-preview > span {
   inset-inline-start: auto;
   padding: 3px 5px;
   border-radius: 3px;
-  background: #e5f6ef;
-  color: #0c8c68;
+  background: var(--accent);
+  color: var(--accent-foreground);
   font-size: 8px;
 }
 
@@ -1172,21 +1172,21 @@ body .resume-draft-preview > span {
   width: 42px;
   height: 5px;
   margin: 0 auto 7px;
-  background: #213a55;
+  background: oklch(0.22 0 0);
 }
 
 .resume-thumbnail-lines strong {
   width: 34px;
   height: 3px;
   margin: 15px 0 7px auto;
-  background: var(--brand-secondary);
+  background: oklch(0.5 0 0);
 }
 
 .resume-thumbnail-lines i {
   width: 100%;
   height: 3px;
   margin-bottom: 6px;
-  background: #dfe7ef;
+  background: oklch(0.88 0 0);
 }
 
 body .resume-draft-body {
@@ -1227,7 +1227,7 @@ body .resume-draft-body h3 {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: var(--brand-secondary);
+  background: var(--primary);
 }
 
 body .resume-card-actions {

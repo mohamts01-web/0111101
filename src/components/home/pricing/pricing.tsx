@@ -15,9 +15,9 @@ export function Pricing({ country, userEmail }: { country?: string; userEmail?: 
   useEffect(() => {
     const token = process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN;
     const environment = process.env.NEXT_PUBLIC_PADDLE_ENV;
-    if (!token || !environment) throw new Error('Paddle client environment is not configured.');
+    if (!token || !environment) return;
     void initializePaddle({ token, environment: environment as Environments }).then((instance) => {
-      if (!instance) throw new Error('Paddle.js initialization failed.');
+      if (!instance) return;
       setPaddle(instance);
     });
   }, []);

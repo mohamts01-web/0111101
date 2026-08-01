@@ -109,8 +109,8 @@ export type ResumeSectionKey =
   | 'achievements'
   | 'volunteer';
 
-const defaultStyle: ResumeStyle = { accentColor: '#173b68', fontFamily: 'Tahoma, Arial, sans-serif', fontSize: 9.2 };
-const resumeColors = ['#173b68', '#087a4d', '#7a2538', '#4b5563', '#7c4f16', '#111827'];
+const defaultStyle: ResumeStyle = { accentColor: '#111827', fontFamily: 'Tahoma, Arial, sans-serif', fontSize: 9.2 };
+const resumeColors = ['#111827', '#1a1a1a', '#374151', '#4b5563', '#6b7280', '#9ca3af'];
 const resumeFonts = [
   ['Tahoma', 'Tahoma, Arial, sans-serif'],
   ['Arial', 'Arial, sans-serif'],

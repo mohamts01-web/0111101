@@ -84,8 +84,8 @@ export function HeroSection() {
   return (
     <>
       <section className="load-hero">
-        <Spotlight className="load-spotlight load-spotlight-blue" fill="#0066FF" />
-        <Spotlight className="load-spotlight load-spotlight-teal" fill="#00C9B7" />
+        <Spotlight className="load-spotlight load-spotlight-blue" fill="oklch(0.52 0.2 256)" />
+        <Spotlight className="load-spotlight load-spotlight-teal" fill="oklch(0.72 0.14 196)" />
         <div className="load-grid" aria-hidden="true" />
         <div className="container load-hero-inner">
           <motion.div
