@@ -63,16 +63,16 @@ export default function Header({ user }: Props) {
   }
 
   return (
-    <nav className="load-nav sticky top-3 z-40 mx-auto w-[calc(100%-1.5rem)] max-w-[1180px] border border-white/10 bg-[#0b0f19]/70 backdrop-blur-xl">
+    <nav className="load-nav sticky top-3 z-40 mx-auto w-[calc(100%-1.5rem)] max-w-[1180px] border border-white/10 backdrop-blur-xl" style={{ background: 'oklch(0.13 0 0 / 0.7)' }}>
       <div className="container flex h-[68px] items-center justify-between gap-4">
         <div className="flex items-center gap-9">
           <Link className="home-logo flex items-center gap-3" href={localizedHomePath} aria-label={text.brand}>
             <BrandMark className="h-9 w-9" />
             <span className="brand-wordmark text-base">{text.brand}</span>
           </Link>
-          <div className="hidden items-center gap-6 text-sm font-medium text-slate-400 lg:flex">
+          <div className="hidden items-center gap-6 text-sm font-medium lg:flex" style={{ color: 'oklch(0.65 0 0)' }}>
             {navigation.map((item) => (
-              <Link key={item.href} href={item.href} className="transition-colors hover:text-white">
+              <Link key={item.href} href={item.href} className="transition-colors" style={{ color: 'inherit' }} onMouseEnter={e => (e.currentTarget.style.color = 'oklch(0.985 0 0)')} onMouseLeave={e => (e.currentTarget.style.color = '')}>
                 {item.label}
               </Link>
             ))}
@@ -83,7 +83,8 @@ export default function Header({ user }: Props) {
           <Button
             variant="ghost"
             size="sm"
-            className="hidden gap-2 text-slate-300 hover:bg-white/10 hover:text-white sm:inline-flex"
+            className="hidden gap-2 sm:inline-flex"
+            style={{ color: 'oklch(0.82 0 0)' }}
             onClick={changeLanguage}
           >
             <Languages className="h-4 w-4" />

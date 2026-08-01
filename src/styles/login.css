@@ -48,8 +48,8 @@
   left: 50%;
   margin-left: -44px;
   top: -2px;
-  background: #fff800;
-  opacity: 0.5;
+  background: #fff;
+  opacity: 0.3;
   filter: blur(12px);
 }
 
@@ -62,8 +62,8 @@
   margin-left: -64px;
   top: -140px;
   border-radius: 280px;
-  opacity: 0.1;
-  background: #fff800;
+  opacity: 0.06;
+  background: #fff;
   filter: blur(48px);
 }
 
@@ -80,8 +80,8 @@
   left: 52px;
   top: -19px;
   border-radius: 384px;
-  opacity: 0.2;
-  background: #fff800;
+  opacity: 0.12;
+  background: #fff;
   filter: blur(32px);
 }
 
@@ -103,7 +103,7 @@
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 15%,
-    rgba(255, 248, 0, 0.9) 50%,
+    rgba(255, 255, 255, 0.6) 50%,
     rgba(255, 255, 255, 0) 85%
   );
 }
