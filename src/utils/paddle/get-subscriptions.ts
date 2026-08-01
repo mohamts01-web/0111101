@@ -1,0 +1,30 @@
+'use server';
+
+import { getCustomerId } from '@/utils/paddle/get-customer-id';
+import { getPaddleInstance } from '@/utils/paddle/get-paddle-instance';
+import { SubscriptionResponse } from '@/lib/api.types';
+import { SubscriptionStatus } from '@paddle/paddle-node-sdk';
+import { getErrorMessage } from '@/utils/paddle/data-helpers';
+
+export async function getSubscriptions(): Promise<SubscriptionResponse> {
+  try {
+    const customerId = await getCustomerId();
+    if (customerId) {
+      const subscriptionCollection = getPaddleInstance().subscriptions.list({
+        customerId: [customerId],
+        status: ['active', 'trialing', 'canceled', 'paused', 'past_due'] as SubscriptionStatus[],
+        perPage: 20,
+      });
+      const subscriptions = await subscriptionCollection.next();
+      return {
+        data: subscriptions,
+        hasMore: subscriptionCollection.hasMore,
+        totalRecords: subscriptionCollection.estimatedTotal,
+      };
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (e) {
+    return getErrorMessage();
+  }
+  return getErrorMessage();
+}

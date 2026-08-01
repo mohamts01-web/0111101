@@ -1,0 +1,209 @@
+@import 'tailwindcss' source(none);
+@source '../';
+@plugin "tailwindcss-animate";
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  color-scheme: light;
+  --background: #f5f8fc;
+  --foreground: #172033;
+  --card: #ffffff;
+  --card-foreground: #172033;
+  --popover: #ffffff;
+  --popover-foreground: #172033;
+  --primary: #0c8df0;
+  --primary-foreground: #ffffff;
+  --secondary: #edf3fa;
+  --secondary-foreground: #25334a;
+  --muted: #eef3f8;
+  --muted-foreground: #6b7890;
+  --accent: #e5f4ff;
+  --accent-foreground: #0878c9;
+  --destructive: #c83939;
+  --destructive-foreground: #ffffff;
+  --border: #dce5ef;
+  --input: #d1dce8;
+  --ring: #168fe9;
+  --success: #0d9b72;
+  --warning: #a46808;
+  --gold: #b68522;
+  --brand-secondary: #14bfae;
+  --brand-ink: #15213a;
+  --radius: 8px;
+  --shadow-sm: 0 1px 2px rgb(32 61 96 / 6%);
+  --shadow-md: 0 14px 36px rgb(32 61 96 / 11%);
+  --load-blue: #0066ff;
+  --load-teal: #00c9b7;
+  --load-deep: #0b0f19;
+  --load-panel: #111827;
+  --load-glass: #1e293b;
+  --load-muted: #94a3b8;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0e1420;
+  --foreground: #edf4fb;
+  --card: #151d2b;
+  --card-foreground: #edf4fb;
+  --popover: #151d2b;
+  --popover-foreground: #edf4fb;
+  --primary: #54b6ff;
+  --primary-foreground: #07121e;
+  --secondary: #1d2939;
+  --secondary-foreground: #e7eff8;
+  --muted: #1b2635;
+  --muted-foreground: #9aa9bb;
+  --accent: #143650;
+  --accent-foreground: #9fd8ff;
+  --destructive: #e16b6b;
+  --destructive-foreground: #1e0808;
+  --border: #2a3749;
+  --input: #35455a;
+  --ring: #64bcff;
+  --success: #41d1a8;
+  --warning: #e2a746;
+  --gold: #d5ad57;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 22%);
+  --shadow-md: 0 14px 36px rgb(0 0 0 / 28%);
+}
+
+@utility container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-gold: var(--gold);
+  --radius-xs: 3px;
+  --radius-sm: 5px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--background);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    min-height: 100vh;
+    letter-spacing: 0;
+  }
+
+  html[lang^='ar'] body {
+    font-family: var(--font-arabic), Tahoma, Arial, sans-serif;
+  }
+
+  html[lang='en'] body {
+    font-family: var(--font-latin), Inter, Arial, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  ::selection {
+    color: #fff;
+    background: #0c8df0;
+  }
+}
+
+.brand-mark {
+  position: relative;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 0;
+  background: transparent;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  transform: scale(1.816) translateY(0.75%);
+  object-fit: contain;
+  background: transparent;
+}
+
+.brand-wordmark {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-family: var(--font-latin), Inter, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.surface {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+
+.page-shell {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
