@@ -8670,3 +8670,216 @@
     animation-duration: 0.01ms !important;
   }
 }
+
+/* Theme token bridge for the interactive editor. Resume paper stays white for export. */
+.builder-light {
+  --green: var(--primary);
+  --dark: var(--primary);
+  --mint: var(--accent);
+  --line: var(--border);
+  --text: var(--foreground);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.builder-light .builder-topbar,
+.builder-light .builder-sidebar,
+.builder-light .builder-form,
+.builder-light .builder-preview,
+.builder-light .builder-navigation,
+.builder-light .builder-editor-body,
+.builder-light .resume-score-strip,
+.builder-light .builder-quick-tools,
+.builder-light .customize-control-section,
+.builder-light .customize-english-tip,
+.builder-light .rich-field-card,
+.builder-light .rich-field-meta {
+  color: var(--card-foreground);
+  border-color: var(--border);
+  background: var(--card);
+}
+
+.builder-light .builder-sidebar,
+.builder-light .builder-preview,
+.builder-light .preview-stage {
+  background: var(--muted);
+}
+
+.builder-light .builder-form-heading h1,
+.builder-light .builder-form-heading h2,
+.builder-light .builder-section-heading h1,
+.builder-light .builder-section-heading h2,
+.builder-light .builder-section-heading strong,
+.builder-light .builder-sidebar-title strong,
+.builder-light .builder-sidebar-status strong,
+.builder-light .builder-step b,
+.builder-light .resume-score-summary b {
+  color: var(--foreground);
+}
+
+.builder-light .builder-form-heading p,
+.builder-light .builder-section-heading p,
+.builder-light .builder-sidebar-title small,
+.builder-light .builder-sidebar-status span,
+.builder-light .builder-step > span,
+.builder-light .builder-section-number,
+.builder-light .rich-field-meta,
+.builder-light .customize-control span,
+.builder-light .customize-english-tip span,
+.builder-light .preview-pager {
+  color: var(--muted-foreground);
+}
+
+.builder-light .builder-pane-switch,
+.builder-light .language-switch,
+.builder-light .page-mode-control,
+.builder-light .zoom-control,
+.builder-light .design-toolbar,
+.builder-light .template-thumbnail,
+.builder-light .customize-segmented-control,
+.builder-light .english-recommendation,
+.builder-light .builder-quick-tools button,
+.builder-light .customize-template-grid > button,
+.builder-light .resume-field input,
+.builder-light .resume-field textarea,
+.builder-light .resume-field select,
+.builder-light .rich-field-editor,
+.builder-light .design-toolbar select,
+.builder-light .customize-control select {
+  color: var(--foreground);
+  border-color: var(--border);
+  background: var(--card);
+}
+
+.builder-light .builder-pane-switch button,
+.builder-light .language-switch button,
+.builder-light .page-mode-control button,
+.builder-light .template-tabs button {
+  color: var(--muted-foreground);
+}
+
+.builder-light .builder-pane-switch button.active,
+.builder-light .language-switch button.active,
+.builder-light .page-mode-control button.active,
+.builder-light .template-tabs button.active,
+.builder-light .customize-segmented-control button.active,
+.builder-light .customize-template-grid > button.active,
+.builder-light .builder-step.active {
+  color: var(--accent-foreground);
+  border-color: var(--border);
+  background: var(--accent);
+  box-shadow: none;
+}
+
+.builder-light .builder-download {
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+  background: var(--primary);
+  box-shadow: none;
+}
+
+.builder-light .builder-navigation > button:last-child {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.builder-light .builder-notice {
+  color: var(--accent-foreground);
+  border-color: var(--border);
+  background: var(--accent);
+}
+
+.builder-light .builder-email {
+  color: var(--foreground);
+  border-color: var(--border);
+  background: var(--secondary);
+}
+
+.builder-light .resume-field input:focus,
+.builder-light .resume-field textarea:focus,
+.builder-light .resume-field select:focus,
+.builder-light .rich-field-editor:focus,
+.builder-light .design-toolbar select:focus,
+.builder-light .customize-control select:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 28%, transparent);
+}
+
+/* Existing dark editor rules are more specific than the base bridge. */
+.dark .builder-light {
+  --green: var(--primary);
+  --dark: var(--primary);
+  --mint: var(--accent);
+  --line: var(--border);
+  --text: var(--foreground);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.dark .builder-light .builder-topbar,
+.dark .builder-light .builder-sidebar,
+.dark .builder-light .builder-form,
+.dark .builder-light .builder-preview,
+.dark .builder-light .builder-navigation,
+.dark .builder-light .builder-editor-body,
+.dark .builder-light .resume-score-strip,
+.dark .builder-light .builder-quick-tools,
+.dark .builder-light .customize-control-section,
+.dark .builder-light .customize-english-tip,
+.dark .builder-light .rich-field-card,
+.dark .builder-light .rich-field-meta {
+  color: var(--card-foreground);
+  border-color: var(--border);
+  background: var(--card);
+}
+
+.dark .builder-light .builder-sidebar,
+.dark .builder-light .builder-preview,
+.dark .builder-light .preview-stage {
+  background: var(--muted);
+}
+
+.dark .builder-light .builder-pane-switch,
+.dark .builder-light .language-switch,
+.dark .builder-light .page-mode-control,
+.dark .builder-light .zoom-control,
+.dark .builder-light .design-toolbar,
+.dark .builder-light .template-thumbnail,
+.dark .builder-light .customize-segmented-control,
+.dark .builder-light .english-recommendation,
+.dark .builder-light .builder-quick-tools button,
+.dark .builder-light .customize-template-grid > button,
+.dark .builder-light .resume-field input,
+.dark .builder-light .resume-field textarea,
+.dark .builder-light .resume-field select,
+.dark .builder-light .rich-field-editor,
+.dark .builder-light .design-toolbar select,
+.dark .builder-light .customize-control select {
+  color: var(--foreground);
+  border-color: var(--border);
+  background: var(--card);
+}
+
+.dark .builder-light .builder-pane-switch button.active,
+.dark .builder-light .language-switch button.active,
+.dark .builder-light .page-mode-control button.active,
+.dark .builder-light .template-tabs button.active,
+.dark .builder-light .customize-segmented-control button.active,
+.dark .builder-light .customize-template-grid > button.active,
+.dark .builder-light .builder-step.active {
+  color: var(--accent-foreground);
+  border-color: var(--border);
+  background: var(--accent);
+  box-shadow: none;
+}
+
+.dark .builder-light .builder-navigation > button:last-child {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.dark .builder-light .builder-notice {
+  color: var(--accent-foreground);
+  border-color: var(--border);
+  background: var(--accent);
+}

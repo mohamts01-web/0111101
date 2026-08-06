@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'منصة ثنائية اللغة لبناء وتحسين السيرة الذاتية وفحص توافق ATS.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#f7f9f8',
-    theme_color: '#0c8df0',
+    background_color: '#ffffff',
+    theme_color: '#1d1d1d',
     icons: [
       {
         src: '/brand/platform-mark.png',
