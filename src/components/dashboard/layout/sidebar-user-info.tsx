@@ -47,7 +47,7 @@ export function SidebarUserInfo() {
   }, [user?.id]);
 
   async function handleLogout() {
-    await supabase.auth.signOut();
+    if (supabase) await supabase.auth.signOut();
     location.assign('/login');
   }
 
