@@ -13,8 +13,10 @@ export async function updateSession(request: NextRequest) {
     process.env.SUPABASE_ANON_KEY ??
     process.env.SUPABASE_PUBLISHABLE_KEY;
 
+  // Keep public pages renderable when Supabase is not injected into the preview runtime.
+  // Auth and protected data access remain unavailable until the integration variables exist.
   if (!supabaseUrl || !supabaseKey) {
-    throw new Error('Supabase environment variables are not configured.');
+    return supabaseResponse;
   }
 
   const supabase = createServerClient(supabaseUrl, supabaseKey, {
